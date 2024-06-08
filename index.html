@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>케이크 무인 픽업대 앱</title>
+        <link rel="stylesheet" href="producer_styles.css" />
+    </head>
+    <body>
+        <header>
+            <img src="CakeDay_logo.png" alt="logo" class="logo" />
+            <h1>케이크 무인 픽업대 앱</h1>
+        </header>
+        <main>
+            <section id="intro">
+                <h2>환영합니다!</h2>
+                <p class="subtext">케이크 무인 픽업대 앱을 통해 편리하게 케이크를 예약하고 픽업하세요.</p>
+                <div class="button-container">
+                    <button id="reservationButton" class="custom-btn btn-16">예약하기</button>
+                    <button class="custom-btn btn-16">
+                        <a href="pricing.html" style="text-decoration: none">요금제 보기 </a>
+                    </button>
+                </div>
+            </section>
+            <section id="locationSelection">
+                <h2>가게 위치를 선택하세요</h2>
+                <label for="subRegion">서울 구 선택</label>
+                <select id="subRegion" style="margin-left: 10px">
+                    <option value="gangnam">강남구</option>
+                    <option value="songpa">송파구</option>
+                    <option value="seocho">서초구</option>
+                    <option value="seongdong">성동구</option>
+                    <option value="gangseo">강서구</option>
+                    <!-- Add more districts as needed -->
+                </select>
+                <div id="proPlanDescription">
+                    <p>- 안전하게 선결제 받을 수 있어요!</p>
+                    <p>- 자동으로 매출 추이를 업데이트해줘요!</p>
+                    <p>- 무인픽업대로 늦은 시간에도 안심하고 퇴근하세요</p>
+                </div>
+                <button id="confirmRegion" class="custom-btn btn-16">선택 완료</button>
+            </section>
+            <section id="details" style="display: none">
+                <h2>서비스 이용 시 주의사항</h2>
+                <ul class="subtext">
+                    <li>케이크 픽업 시 예약 시간 준수</li>
+                    <li>픽업 시간을 지키지 않을 경우 추가 요금 부과</li>
+                    <li>케이크 보관 사물함 사용 시 보증금 지불</li>
+                    <li>노쇼 방지를 위해 예약 취소는 최소 24시간 전에 요청</li>
+                    <li>무인 픽업대는 예약한 고객만 이용 가능</li>
+                </ul>
+            </section>
+        </main>
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <p>지도를 사용하기 위해 개인정보 및 쿠키 동의가 필요합니다.</p>
+                <button id="agreeButton" class="popup-button">동의</button>
+                <button id="disagreeButton" class="popup-button">동의하지 않음</button>
+            </div>
+        </div>
+        <script>
+            document.getElementById('showPopup').onclick = function () {
+                document.getElementById('popup').style.display = 'flex';
+            };
+            document.getElementById('agreeButton').onclick = function () {
+                document.getElementById('popup').style.display = 'none';
+                alert('동의하셨습니다.');
+            };
+            document.getElementById('disagreeButton').onclick = function () {
+                document.getElementById('popup').style.display = 'none';
+                alert('동의하지 않으셨습니다.');
+            };
+        </script>
+
+        <script src="app.js"></script>
+    </body>
+</html>

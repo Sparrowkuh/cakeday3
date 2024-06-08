@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>예약하기 - 케이크 무인 픽업대 앱</title>
+        <link rel="stylesheet" href="producer_styles.css" />
+    </head>
+    <body style="padding: 0">
+        <header>
+            <h1>케이크 무인 픽업대 앱</h1>
+        </header>
+        <main style="padding: 0; margin: 0">
+            <div id="reservation-container" class="column">
+                <section id="map" style="padding: 0; margin: 0">
+                    <!-- <h2>실시간 지도</h2> -->
+                    <div id="mapContainer">
+                        <img src="map_image.jpg" alt="지도 이미지" id="mapImage" />
+                    </div>
+                </section>
+                <section id="reservation" style="margin: 0; border-radius: 20px">
+                    <h2>예약하기</h2>
+                    <form id="reservationForm">
+                        <label for="location">위치</label>
+                        <select id="location" name="location">
+                            <option value="seongsu">성수역</option>
+                            <option value="tukseom">뚝섬역</option>
+                            <option value="seoulforest">서울숲역</option>
+                        </select>
+
+                        <label for="time">픽업 시간</label>
+                        <input type="datetime-local" id="time" name="time" min="09:00" max="18:00" />
+
+                        <label for="locker">사물함 번호</label>
+                        <select id="locker" name="locker">
+                            <option value="18">18</option>
+                            <option value="21">21</option>
+                            <option value="29">29</option>
+                        </select>
+
+                        <label for="customerName">고객 성함</label>
+                        <input type="text" id="customerName" name="customerName" />
+
+                        <label for="customerPhone">고객 전화번호</label>
+                        <input type="tel" id="customerPhone" name="customerPhone" />
+
+                        <label for="customerPassword">설정 비밀번호</label>
+                        <input type="password" id="customerPassword" name="customerPassword" />
+                        <button type="submit" class="custom-btn btn-16">예약하기</button>
+                    </form>
+                    <p>(영업 시간은 오전 9시~오후 6시이며, 정해진 시간 외에는 예약할 수 없습니다.)</p>
+                </section>
+            </div>
+        </main>
+        <script src="app.js"></script>
+    </body>
+</html>
