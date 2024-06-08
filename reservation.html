@@ -4,6 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>예약하기 - 케이크 무인 픽업대 앱</title>
+        <script
+            type="text/javascript"
+            src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=x9fpw4u3bn"
+        ></script>
         <link rel="stylesheet" href="producer_styles.css" />
     </head>
     <body style="padding: 0">
@@ -12,10 +16,18 @@
         </header>
         <main style="padding: 0; margin: 0">
             <div id="reservation-container" class="column">
-                <section id="map" style="padding: 0; margin: 0">
                     <!-- <h2>실시간 지도</h2> -->
                     <div id="mapContainer">
-                        <img src="map_image.jpg" alt="지도 이미지" id="mapImage" />
+                        <div id="map" style="width: 100%; height: 500px"></div>
+
+                        <script>
+                            var mapOptions = {
+                                center: new naver.maps.LatLng(37.3595704, 127.105399),
+                                zoom: 10,
+                            };
+
+                            var map = new naver.maps.Map('map', mapOptions);
+                        </script>
                     </div>
                 </section>
                 <section id="reservation" style="margin: 0; border-radius: 20px">
